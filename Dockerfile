@@ -18,9 +18,9 @@
 FROM confluentinc/cp-kafka-connect-base:6.0.0
 ENV CONNECT_PLUGIN_PATH="/usr/share/java,/usr/share/confluent-hub-components"
 
-RUN echo "===> Installing JDBC drivers..." \
-    && apt-get -qq update \
-    && apt-get install vim
+# RUN echo "===> Installing JDBC drivers..." \
+#    && apt-get -qq update \
+#    && apt-get install vim
 
 #RUN confluent-hub install --no-prompt confluentinc/kafka-connect-jdbc:10.0.0
 
@@ -28,5 +28,5 @@ ADD etc/kafka-connect-jdbc-10.1.0-SNAPSHOT.jar /usr/share/confluent-hub-componen
 ADD etc/mysql-connector-java-8.0.21.jar /usr/share/confluent-hub-components/lib/mysql-connector-java-8.0.21.jar
 ADD etc/ifxdbc-4.50.4.1.jar /usr/share/confluent-hub-components/lib/ifxdbc-4.50.4.1.jar
 
-#RUN echo "===> Installing GCS Sink Connector ..."
-#RUN confluent-hub install confluentinc/kafka-connect-gcs:latest --no-prompt
+# RUN echo "===> Installing GCS Sink Connector ..."
+# RUN confluent-hub install confluentinc/kafka-connect-gcs:latest --no-prompt
